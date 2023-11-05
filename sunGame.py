@@ -24,7 +24,7 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('Simple Platformer')
 
 clock = pygame.time.Clock()
-background = pygame.image.load('testKitchen.jpeg')
+background = pygame.image.load('ratLevel1BIG.png')
 bgScroll = 0
 
 #define obstacles - yellow
@@ -143,6 +143,7 @@ while running:
        # new_object.
         gamethings.append(new_object)
 
+    screen.fill(WHITE)
     screen.blit(background, (bgScroll,0))
     all_sprites.draw(screen)
 
