@@ -1,13 +1,12 @@
 import pygame, sys
-from levelsArray import *
-from sunGameTest import Tile
+from settings import *
+from level import Level
 
+# Pygame setup
 pygame.init()
-screen_width = 1200
-screen_height = 700
 screen = pygame.display.set_mode((screen_width, screen_height))
 clock = pygame.time.Clock()
-test_tile = pygame.sprite.Group(Tile(100,100),200)
+level = Level(levelOne, screen)
 
 while True:
     for event in pygame.event.get():
@@ -15,9 +14,8 @@ while True:
             pygame.quit()
             sys.exit()
 
-    screen.fill(black)
+    screen.fill('black')
+    level.run()
 
-    test_tile.draw(screen)
-
-    paygame.display.update()
+    pygame.display.update()
     clock.tick(60)
