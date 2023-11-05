@@ -6,7 +6,7 @@ from level import Level
 pygame.init()
 screen = pygame.display.set_mode((screen_width, screen_height))
 clock = pygame.time.Clock()
-level = Level(levelOne, screen, '../sunhacks2023/graphics/level1BackgroundFixed.png', (15,-3))
+level = Level(levelOne, screen, '../sunhacks2023/graphics/level1BackgroundFixed.png', (12,-5))
 
 while True:
     for event in pygame.event.get():
@@ -14,8 +14,9 @@ while True:
             pygame.quit()
             sys.exit()
 
-    screen.fill('white')
-    level.run()
+    screen.fill((212,180,140))
+    if level.run() == 1:
+        print('good work you cheeky wanker')
 
     pygame.display.update()
     clock.tick(60)
