@@ -105,6 +105,7 @@ all_sprites.add(player)
 #create objects
 gamethings = []
 
+
 # Game loop
 running = True
 while running:

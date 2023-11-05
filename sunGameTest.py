@@ -15,9 +15,17 @@ while True:
             pygame.quit()
             sys.exit()
 
-    screen.fill(black)
+screen.fill(black)
 
-    test_tile.draw(screen)
+test_tile.draw(screen)
 
-    paygame.display.update()
-    clock.tick(60)
+paygame.display.update()
+clock.tick(60)
+
+
+
+
+
+
+
+
