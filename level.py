@@ -2,10 +2,11 @@ from tiles import Tile
 import pygame
 from settings import tileSize, screen_width
 from player import Player
+from imageOverlay import ImageOverlay
 
 
 class Level:
-    def __init__(self, level_data, surface):
+    def __init__(self, level_data, surface, image_path, initPos):
 
         #level setup
         self.display_surface = surface
@@ -14,6 +15,7 @@ class Level:
         self.current_x = 0
         #self.background = '../sunhacks2023/graphics/level1Backgroundnew'.convertAlpha()
         #self.rect = self.background.get_rect(topLeft=(0, 0))
+        self.image_overlay = ImageOverlay(image_path, self.display_surface, initPos)
 
 
     def setup_level(self, layout):
@@ -99,4 +101,7 @@ class Level:
         self.horizontal_movement_collision()
         self.vertical_movement_collision()
         self.player.draw(self.display_surface)
+
+        self.image_overlay.update(self.world_shift)
+        self.image_overlay.draw()
 
