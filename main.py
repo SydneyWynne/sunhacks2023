@@ -15,8 +15,8 @@ while True:
             sys.exit()
 
     screen.fill((212,180,140))
-    if level.run() == 1:
-        print('good work you cheeky wanker')
+    level.run()
+        #print('good work you cheeky wanker')
 
     pygame.display.update()
     clock.tick(60)
